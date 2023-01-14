@@ -21,11 +21,12 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private List<int> _scores;
-        private bool _player1Move = true;
+        private bool _player1Move = true; // X
+        private int _qtyOfMoves = 0;
         public MainWindow()
         {
             InitializeComponent();
-            _scores= new List<int>();
+            _scores = new List<int>(3);
             TopLeft.IsEnabled = true;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,6 +43,11 @@ namespace WpfApp1
                 }
                 TopLeft.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
            
         }
@@ -59,6 +65,11 @@ namespace WpfApp1
                 }
                 TopCenter.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
         private void TopRight_Click(object sender, RoutedEventArgs e)
@@ -75,6 +86,11 @@ namespace WpfApp1
                 }
                 TopRight.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
         private void CenterLeft_Click(object sender, RoutedEventArgs e)
@@ -91,6 +107,11 @@ namespace WpfApp1
                 }
                 CenterLeft.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
         private void CenterCenter_Click(object sender, RoutedEventArgs e)
@@ -107,9 +128,13 @@ namespace WpfApp1
                 }
                 CenterCenter.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
-
         private void CenterRight_Click(object sender, RoutedEventArgs e)
         {
             if (CenterRight.IsEnabled)
@@ -124,9 +149,13 @@ namespace WpfApp1
                 }
                 CenterRight.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
-
         private void BottomLeft_Click(object sender, RoutedEventArgs e)
         {
             if (BottomLeft.IsEnabled)
@@ -141,9 +170,13 @@ namespace WpfApp1
                 }
                 BottomLeft.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
-
         private void BottomCenter_Click(object sender, RoutedEventArgs e)
         {
             if (BottomCenter.IsEnabled)
@@ -158,9 +191,13 @@ namespace WpfApp1
                 }
                 BottomCenter.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if (_qtyOfMoves > 4)
+                {
+                    checkWinner();
+                }
             }
         }
-
         private void BottomRight_Click(object sender, RoutedEventArgs e)
         {
             if (BottomRight.IsEnabled)
@@ -175,7 +212,28 @@ namespace WpfApp1
                 }
                 BottomRight.IsEnabled = false;
                 _player1Move = !_player1Move;
+                _qtyOfMoves++;
+                if(_qtyOfMoves>4)
+                {
+                    checkWinner();
+                }
             }
+        }
+        public void checkWinner()
+        {
+            if(TopLeft.Content.ToString() == TopCenter.Content.ToString() && TopCenter.Content.ToString() == TopRight.Content.ToString())
+            {
+                if(TopLeft.Content.ToString() == "X")
+                {
+                    _scores[0]++; //redo
+                }
+                else
+                {
+                    _scores[2]++;
+                }
+            }
+            Palyer1Score.Content = _scores[0].ToString();
+            Palyer2Score.Content = _scores[2].ToString();
         }
     }
 }
