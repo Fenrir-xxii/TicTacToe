@@ -26,8 +26,10 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            _scores = new List<int>(3);
-            TopLeft.IsEnabled = true;
+            _scores = new List<int>();
+            _scores.Add(0);
+            _scores.Add(0);
+            _scores.Add(0);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -226,6 +228,7 @@ namespace WpfApp1
                 if(TopLeft.Content.ToString() == "X")
                 {
                     _scores[0]++; //redo
+                    MessageBox.Show("Winner is Player1");
                 }
                 else
                 {
@@ -234,6 +237,28 @@ namespace WpfApp1
             }
             Palyer1Score.Content = _scores[0].ToString();
             Palyer2Score.Content = _scores[2].ToString();
+        }
+        public void ClearField()
+        {
+            TopLeft.IsEnabled = true;
+            TopCenter.IsEnabled = true;
+            TopRight.IsEnabled = true;
+            CenterLeft.IsEnabled = true;
+            CenterCenter.IsEnabled = true;
+            CenterRight.IsEnabled = true;
+            BottomRight.IsEnabled = true;
+            BottomCenter.IsEnabled = true;
+            BottomLeft.IsEnabled = true;
+            TopLeft.Content = null;
+            TopCenter.Content = null;
+            TopRight.Content = null;
+            CenterLeft.Content = null;
+            CenterCenter.Content = null;
+            CenterRight.Content = null;
+            BottomRight.Content = null;
+            BottomCenter.Content = null;
+            BottomLeft.Content = null;
+            _qtyOfMoves = 0;
         }
     }
 }
