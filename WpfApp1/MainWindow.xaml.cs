@@ -227,13 +227,13 @@ namespace WpfApp1
                     if (TopLeft.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -245,13 +245,13 @@ namespace WpfApp1
                     if (CenterLeft.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -263,13 +263,13 @@ namespace WpfApp1
                     if (BottomLeft.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -281,13 +281,13 @@ namespace WpfApp1
                     if (TopLeft.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -299,13 +299,13 @@ namespace WpfApp1
                     if (TopCenter.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -317,13 +317,13 @@ namespace WpfApp1
                     if (TopRight.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -335,13 +335,13 @@ namespace WpfApp1
                     if (TopLeft.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -353,13 +353,13 @@ namespace WpfApp1
                     if (TopRight.Content.ToString() == "X")
                     {
                         _scores[0]++; //redo
-                        MessageBox.Show("Winner is Player1");
+                        MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                     else
                     {
                         _scores[2]++;
-                        MessageBox.Show("Winner is Player2");
+                        MessageBox.Show("Winner is Player2", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
                 }
@@ -367,7 +367,7 @@ namespace WpfApp1
             if (_qtyOfMoves == 9)
             {
                 _scores[1]++; //draws
-                MessageBox.Show("Tie");
+                MessageBox.Show("Tie", "Game over", MessageBoxButton.OK, MessageBoxImage.Information);
                 ClearField();
             }
             Palyer1Score.Content = _scores[0].ToString();
