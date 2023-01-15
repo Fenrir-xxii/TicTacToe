@@ -224,9 +224,12 @@ namespace WpfApp1
             {
                 if (TopLeft.Content.ToString() == TopCenter.Content.ToString() && TopCenter.Content.ToString() == TopRight.Content.ToString())
                 {
+                    TopLeft.Foreground = new SolidColorBrush(Colors.Red);
+                    TopCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    TopRight.Foreground = new SolidColorBrush(Colors.Red);
                     if (TopLeft.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -242,9 +245,12 @@ namespace WpfApp1
             {
                 if (CenterLeft.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == CenterRight.Content.ToString())
                 {
+                    CenterLeft.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterRight.Foreground = new SolidColorBrush(Colors.Red);
                     if (CenterLeft.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++; 
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -260,9 +266,12 @@ namespace WpfApp1
             {
                 if (BottomLeft.Content.ToString() == BottomCenter.Content.ToString() && BottomCenter.Content.ToString() == BottomRight.Content.ToString())
                 {
+                    BottomLeft.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomRight.Foreground = new SolidColorBrush(Colors.Red);
                     if (BottomLeft.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -278,9 +287,12 @@ namespace WpfApp1
             {
                 if (TopLeft.Content.ToString() == CenterLeft.Content.ToString() && CenterLeft.Content.ToString() == BottomLeft.Content.ToString())
                 {
+                    TopLeft.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterLeft.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomLeft.Foreground = new SolidColorBrush(Colors.Red);
                     if (TopLeft.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -296,9 +308,12 @@ namespace WpfApp1
             {
                 if (TopCenter.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == BottomCenter.Content.ToString())
                 {
+                    TopCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomCenter.Foreground = new SolidColorBrush(Colors.Red);
                     if (TopCenter.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -312,11 +327,15 @@ namespace WpfApp1
             }
             if (!TopRight.IsEnabled && !CenterRight.IsEnabled && !BottomRight.IsEnabled)
             {
+
                 if (TopRight.Content.ToString() == CenterRight.Content.ToString() && CenterRight.Content.ToString() == BottomRight.Content.ToString())
                 {
+                    TopRight.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterRight.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomRight.Foreground = new SolidColorBrush(Colors.Red);
                     if (TopRight.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -332,9 +351,12 @@ namespace WpfApp1
             {
                 if (TopLeft.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == BottomRight.Content.ToString())
                 {
+                    TopLeft.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomRight.Foreground = new SolidColorBrush(Colors.Red);
                     if (TopLeft.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -350,9 +372,12 @@ namespace WpfApp1
             {
                 if (TopRight.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == BottomLeft.Content.ToString())
                 {
+                    TopRight.Foreground = new SolidColorBrush(Colors.Red);
+                    CenterCenter.Foreground = new SolidColorBrush(Colors.Red);
+                    BottomLeft.Foreground = new SolidColorBrush(Colors.Red);
                     if (TopRight.Content.ToString() == "X")
                     {
-                        _scores[0]++; //redo
+                        _scores[0]++;
                         MessageBox.Show("Winner is Player1", "Congratulations!", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearField();
                     }
@@ -394,6 +419,15 @@ namespace WpfApp1
             BottomRight.Content = null;
             BottomCenter.Content = null;
             BottomLeft.Content = null;
+            TopLeft.Foreground = new SolidColorBrush(Colors.Blue);
+            TopCenter.Foreground = new SolidColorBrush(Colors.Blue);
+            TopRight.Foreground = new SolidColorBrush(Colors.Blue);
+            CenterLeft.Foreground = new SolidColorBrush(Colors.Blue);
+            CenterCenter.Foreground = new SolidColorBrush(Colors.Blue);
+            CenterRight.Foreground = new SolidColorBrush(Colors.Blue);
+            BottomRight.Foreground = new SolidColorBrush(Colors.Blue);
+            BottomCenter.Foreground = new SolidColorBrush(Colors.Blue);
+            BottomLeft.Foreground = new SolidColorBrush(Colors.Blue);
             _qtyOfMoves = 0;
             _player1Move = true;
         }
