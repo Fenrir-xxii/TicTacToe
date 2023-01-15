@@ -26,7 +26,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            _scores = new List<int>{ 0,0,0}; // Player1 , Tie, Player2
+            _scores = new List<int>{0,0,0}; // Player1 , Tie, Player2
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
