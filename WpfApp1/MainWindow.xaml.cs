@@ -397,5 +397,14 @@ namespace WpfApp1
             _qtyOfMoves = 0;
             _player1Move = true;
         }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            _scores.Clear();
+            _scores = new List<int> { 0, 0, 0 }; // Player1 , Tie, Player2
+            ClearField();
+            Palyer1Score.Content = _scores[0].ToString();
+            Palyer2Score.Content = _scores[2].ToString();
+            TieScore.Content = _scores[1].ToString();
+        }
     }
 }
