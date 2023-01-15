@@ -26,10 +26,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            _scores = new List<int>();
-            _scores.Add(0);
-            _scores.Add(0);
-            _scores.Add(0);
+            _scores = new List<int>{ 0,0,0}; // Player1 , Tie, Player2
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -223,20 +220,159 @@ namespace WpfApp1
         }
         public void checkWinner()
         {
-            if(TopLeft.Content.ToString() == TopCenter.Content.ToString() && TopCenter.Content.ToString() == TopRight.Content.ToString())
+            if (!TopLeft.IsEnabled && !TopCenter.IsEnabled && !TopRight.IsEnabled)
             {
-                if(TopLeft.Content.ToString() == "X")
+                if (TopLeft.Content.ToString() == TopCenter.Content.ToString() && TopCenter.Content.ToString() == TopRight.Content.ToString())
                 {
-                    _scores[0]++; //redo
-                    MessageBox.Show("Winner is Player1");
+                    if (TopLeft.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
                 }
-                else
+            }
+            if (!CenterLeft.IsEnabled && !CenterCenter.IsEnabled && !CenterRight.IsEnabled)
+            {
+                if (CenterLeft.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == CenterRight.Content.ToString())
                 {
-                    _scores[2]++;
+                    if (CenterLeft.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
                 }
+            }
+            if (!BottomLeft.IsEnabled && !BottomCenter.IsEnabled && !BottomRight.IsEnabled)
+            {
+                if (BottomLeft.Content.ToString() == BottomCenter.Content.ToString() && BottomCenter.Content.ToString() == BottomRight.Content.ToString())
+                {
+                    if (BottomLeft.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
+                }
+            }
+            if (!TopLeft.IsEnabled && !CenterLeft.IsEnabled && !BottomLeft.IsEnabled)
+            {
+                if (TopLeft.Content.ToString() == CenterLeft.Content.ToString() && CenterLeft.Content.ToString() == BottomLeft.Content.ToString())
+                {
+                    if (TopLeft.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
+                }
+            }
+            if (!TopCenter.IsEnabled && !CenterCenter.IsEnabled && !BottomCenter.IsEnabled)
+            {
+                if (TopCenter.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == BottomCenter.Content.ToString())
+                {
+                    if (TopCenter.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
+                }
+            }
+            if (!TopRight.IsEnabled && !CenterRight.IsEnabled && !BottomRight.IsEnabled)
+            {
+                if (TopRight.Content.ToString() == CenterRight.Content.ToString() && CenterRight.Content.ToString() == BottomRight.Content.ToString())
+                {
+                    if (TopRight.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
+                }
+            }
+            if (!TopLeft.IsEnabled && !CenterCenter.IsEnabled && !BottomRight.IsEnabled)
+            {
+                if (TopLeft.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == BottomRight.Content.ToString())
+                {
+                    if (TopLeft.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
+                }
+            }
+            if (!TopRight.IsEnabled && !CenterCenter.IsEnabled && !BottomLeft.IsEnabled)
+            {
+                if (TopRight.Content.ToString() == CenterCenter.Content.ToString() && CenterCenter.Content.ToString() == BottomLeft.Content.ToString())
+                {
+                    if (TopRight.Content.ToString() == "X")
+                    {
+                        _scores[0]++; //redo
+                        MessageBox.Show("Winner is Player1");
+                        ClearField();
+                    }
+                    else
+                    {
+                        _scores[2]++;
+                        MessageBox.Show("Winner is Player2");
+                        ClearField();
+                    }
+                }
+            }
+            if (_qtyOfMoves == 9)
+            {
+                _scores[1]++; //draws
+                MessageBox.Show("Tie");
+                ClearField();
             }
             Palyer1Score.Content = _scores[0].ToString();
             Palyer2Score.Content = _scores[2].ToString();
+            TieScore.Content = _scores[1].ToString();
         }
         public void ClearField()
         {
@@ -259,6 +395,7 @@ namespace WpfApp1
             BottomCenter.Content = null;
             BottomLeft.Content = null;
             _qtyOfMoves = 0;
+            _player1Move = true;
         }
     }
 }
