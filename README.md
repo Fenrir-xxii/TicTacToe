@@ -8,8 +8,8 @@ Developed using WPF.
 
 Screens:
 
-![alt text](WpfApp1/screens/Screenshot_01.png "screen_01")
+![alt text](screens/Screenshot_01.png "screen_01")
 
-![alt text](WpfApp1/screens/Screenshot_02.png "screen_02")
+![alt text](screens/Screenshot_02.png "screen_02")
 
-![alt text](WpfApp1/screens/Screenshot_03.png "screen_03")
+![alt text](screens/Screenshot_03.png "screen_03")
